@@ -21,9 +21,9 @@ function populateList(plates = [], platesList) {
     .map((plate, i) => {
       return `
             <li>
-            <input type="checkbox" data-index=${i} id="item${i}" ${plate.done
-        ? "checked"
-        : ""} />
+            <input type="checkbox" data-index=${i} id="item${i}" ${
+        plate.done ? "checked" : ""
+      } />
             <label for="item${i}">${plate.text}</label>
             </li>
         `;
@@ -32,7 +32,7 @@ function populateList(plates = [], platesList) {
 }
 
 function toggleDone(e) {
-  if (!e.target.matches("input")) return; // skip this unless it's an input
+  if (!e.target.matches("input")) return; // skip this targetunless it's an input
   const el = e.target;
   const index = el.dataset.index;
   items[index].done = !items[index].done;
